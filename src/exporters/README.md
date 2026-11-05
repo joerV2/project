@@ -1,1 +1,0 @@
-Экспорт карточек в CSV, JSON, Anki и Quizlet
