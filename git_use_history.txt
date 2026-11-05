@@ -1,0 +1,2037 @@
+PS C:\Users\Ura> git --version
+git version 2.46.0.windows.1
+PS C:\Users\Ura> cd D:\GitHub
+PS D:\GitHub> git clone https://github.com/joerV2/project.git
+Cloning into 'project'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 15 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (15/15), 6.27 KiB | 86.00 KiB/s, done.
+Resolving deltas: 100% (2/2), done.
+PS D:\GitHub> cd project
+PS D:\GitHub\project> git config user.name "Юрий"
+PS D:\GitHub\project> git config user.email "fedorenuo.jura@gmail.com"
+PS D:\GitHub\project> git config user.email "mag.profe@mail.ru"
+PS D:\GitHub\project> git config user.email
+>> git config user.name
+mag.profe@mail.ru
+Юрий
+PS D:\GitHub\project> git pull origin main
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 4.34 KiB | 52.00 KiB/s, done.
+From https://github.com/joerV2/project
+ * branch            main       -> FETCH_HEAD
+   f6f2281..7ecca20  main       -> origin/main
+Updating f6f2281..7ecca20
+Fast-forward
+ .gitignore | 220 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ LICENSE    |  21 ++++++
+ 2 files changed, 241 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 LICENSE
+PS D:\GitHub\project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        docs/
+        src/
+        tests/
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\GitHub\project> git add docs/ src/ tests/
+PS D:\GitHub\project> git commit -m "Добавить структуру проекта: docs, src, tests"
+[main e0da942] Добавить структуру проекта: docs, src, tests
+ 6 files changed, 6 insertions(+)
+ create mode 100644 docs/README.md
+ create mode 100644 src/exporters/README.md
+ create mode 100644 src/importers/README.md
+ create mode 100644 src/interface/README.md
+ create mode 100644 src/parser/README.md
+ create mode 100644 tests/README.md
+PS D:\GitHub\project> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\GitHub\project> git log --oneline
+e0da942 (HEAD -> main) Добавить структуру проекта: docs, src, tests
+7ecca20 (origin/main, origin/HEAD) Add comprehensive .gitignore file for Python projects
+dd870c8 Create LICENSE
+f6f2281 Update README.md
+3b3db90 Update README.md
+d9e5404 Update README.md
+397e495 Update README.md
+0261bbb Initial commit
+PS D:\GitHub\project> git diff
+PS D:\GitHub\project> git show
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
+ ^X
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
+:
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+(END)
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ESCOD
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+    Добавить структуру проекта: docs, src, tests
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+ ESCOD
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+commit e0da942de9360480bb79639ed7d224f24d3f8cff (HEAD -> main)
+Author: Юрий <mag.profe@mail.ru>
+Date:   Thu Nov 5 19:43:02 2026 +0500
+
+    Добавить структуру проекта: docs, src, tests
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+ ^X
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+(END)
+
+diff --git a/docs/README.md b/docs/README.md
+new file mode 100644
+index 0000000..f99a01c
+--- /dev/null
++++ b/docs/README.md
+@@ -0,0 +1 @@
++Тут будет документация
+\ No newline at end of file
+diff --git a/src/exporters/README.md b/src/exporters/README.md
+new file mode 100644
+index 0000000..8f17c43
+--- /dev/null
++++ b/src/exporters/README.md
+@@ -0,0 +1 @@
++Экспорт карточек в CSV, JSON, Anki и Quizlet
+\ No newline at end of file
+diff --git a/src/importers/README.md b/src/importers/README.md
+new file mode 100644
+index 0000000..1152b7a
+--- /dev/null
++++ b/src/importers/README.md
+@@ -0,0 +1 @@
++Импорт конспектов из файлов
+\ No newline at end of file
+diff --git a/src/interface/README.md b/src/interface/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/interface/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/src/parser/README.md b/src/parser/README.md
+new file mode 100644
+index 0000000..5408375
+--- /dev/null
++++ b/src/parser/README.md
+@@ -0,0 +1 @@
++Разбор конспектов и выделение вопросов и ответов
+\ No newline at end of file
+diff --git a/tests/README.md b/tests/README.md
+new file mode 100644
+index 0000000..47d339b
+--- /dev/null
++++ b/tests/README.md
+@@ -0,0 +1 @@
++Тестирование модулей приложения
+\ No newline at end of file
+PS D:\GitHub\project> git diff
+PS D:\GitHub\project> git diff
+PS D:\GitHub\project> git restore README.md
+PS D:\GitHub\project> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\GitHub\project> git add README.md
+PS D:\GitHub\project> git commit -m "Дополнить README: структура репозитория"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+PS D:\GitHub\project> git diff
+PS D:\GitHub\project> git diff
+PS D:\GitHub\project> git restore README.md
+PS D:\GitHub\project> git revert HEAD
+[main d7c3a9f] Revert "Добавить структуру проекта: docs, src, tests"
+ 6 files changed, 6 deletions(-)
+ delete mode 100644 docs/README.md
+ delete mode 100644 src/exporters/README.md
+ delete mode 100644 src/importers/README.md
+ delete mode 100644 src/interface/README.md
+ delete mode 100644 src/parser/README.md
+ delete mode 100644 tests/README.md
+PS D:\GitHub\project> git diff
+diff --git a/README.md b/README.md
+index 7b181c5..0144768 100644
+--- a/README.md
++++ b/README.md
+@@ -65,3 +65,6 @@
+ ## 📄 Лицензия
+
+ MIT
++
++
++Тестовая строка для проверки Git.
+\ No newline at end of file
+PS D:\GitHub\project> git restore README.md
+PS D:\GitHub\project> git switch -c feature/readme
+Switched to a new branch 'feature/readme'
+PS D:\GitHub\project> git add README.md
+PS D:\GitHub\project> git commit -m "Добавить описание компонентов проекта"
+On branch feature/readme
+nothing to commit, working tree clean
+PS D:\GitHub\project> git branch
+* feature/readme
+  main
+PS D:\GitHub\project> git log --oneline --graph --all
+* d7c3a9f (HEAD -> feature/readme, main) Revert "Добавить структуру проекта: docs, src, tests"
+* e0da942 Добавить структуру проекта: docs, src, tests
+* 7ecca20 (origin/main, origin/HEAD) Add comprehensive .gitignore file for Python projects
+* dd870c8 Create LICENSE
+* f6f2281 Update README.md
+* 3b3db90 Update README.md
+* d9e5404 Update README.md
+* 397e495 Update README.md
+* 0261bbb Initial commit
+PS D:\GitHub\project> git switch main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+PS D:\GitHub\project> git merge feature/readme
+Already up to date.
+PS D:\GitHub\project> git switch feature/readme
+Switched to branch 'feature/readme'
+PS D:\GitHub\project> git rebase main
+Current branch feature/readme is up to date.
+PS D:\GitHub\project> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> feature/readme
+
+PS D:\GitHub\project> git pull origin features
+fatal: couldn't find remote ref features
+PS D:\GitHub\project> git pull features
+fatal: 'features' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+PS D:\GitHub\project> git rebase main
+Current branch feature/readme is up to date.
+PS D:\GitHub\project> git tag tmp-tag
+PS D:\GitHub\project> git tag
+tmp-tag
+PS D:\GitHub\project> git tag -d tmp-tag
+Deleted tag 'tmp-tag' (was d7c3a9f)
+PS D:\GitHub\project> git tag tmp-tag
+PS D:\GitHub\project> git push origin tmp-tag
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (14/14), 1.32 KiB | 452.00 KiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/joerV2/project.git
+ * [new tag]         tmp-tag -> tmp-tag
+PS D:\GitHub\project> git tag -d tmp-tag
+Deleted tag 'tmp-tag' (was d7c3a9f)
+PS D:\GitHub\project> git push origin :refs/tags/tmp-tag
+To https://github.com/joerV2/project.git
+ - [deleted]         tmp-tag
+PS D:\GitHub\project> git remote -v
+origin  https://github.com/joerV2/project.git (fetch)
+origin  https://github.com/joerV2/project.git (push)
+PS D:\GitHub\project> git push -u origin main
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (14/14), 1.32 KiB | 452.00 KiB/s, done.
+Total 14 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/joerV2/project.git
+   7ecca20..d7c3a9f  main -> main
+branch 'main' set up to track 'origin/main'.
+PS D:\GitHub\project> git add docs/ src/ tests/
+fatal: pathspec 'docs/' did not match any files
+PS D:\GitHub\project> git add docs/ src/ tests/
+PS D:\GitHub\project> git commit -m "Добавить структуру проекта: docs, src, tests"
+[feature/readme cf0d9a6] Добавить структуру проекта: docs, src, tests
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 "docs/\320\224\320\276\320\272\321\203\320\274\320\265\320\275\321\202\320\260\321\206\320\270\321\217 \320\277\321\200\320\276\320\265\320\272\321\202\320\260.txt"
+ create mode 100644 "src/exporters/\320\255\320\272\321\201\320\277\320\276\321\200\321\202 \320\272\320\260\321\200\321\202\320\276\321\207\320\265\320\272 \320\262 CSV, JSON, Anki \320\270 Quizlet.txt"
+ create mode 100644 "src/importers/\320\230\320\274\320\277\320\276\321\200\321\202 \320\272\320\276\320\275\321\201\320\277\320\265\320\272\321\202\320\276\320\262 MD, DOCX, TXT.txt"
+ create mode 100644 "src/interface/\320\237\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\321\214\321\201\320\272\320\270\320\271 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\320\271\321\201 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\321\217.txt"
+ create mode 100644 "src/parser/\320\240\320\260\320\267\320\261\320\276\321\200 \320\272\320\276\320\275\321\201\320\277\320\265\320\272\321\202\320\276\320\262 \320\270 \320\262\321\213\320\264\320\265\320\273\320\265\320\275\320\270\320\265 \320\262\320\276\320\277\321\200\320\276\321\201\320\276\320\262 \320\270 \320\276\321\202\320\262\320\265\321\202\320\276\320\262.txt"
+ create mode 100644 "tests/\320\242\320\265\321\201\321\202\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \320\274\320\276\320\264\321\203\320\273\320\265\320\271 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\321\217.txt"
+PS D:\GitHub\project> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS D:\GitHub\project> git add docs/ src/ tests/
+PS D:\GitHub\project> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS D:\GitHub\project> git commit -m "Добавить структуру проекта: docs, src, tests"
+[feature/readme 07f1dec] Добавить структуру проекта: docs, src, tests
+ 6 files changed, 6 insertions(+)
+PS D:\GitHub\project> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS D:\GitHub\project> git branch --show-current
+feature/readme
+PS D:\GitHub\project> git push -u origin feature
+error: src refspec feature does not match any
+error: failed to push some refs to 'https://github.com/joerV2/project.git'
+PS D:\GitHub\project> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\GitHub\project> git push -u origin feature
+error: src refspec feature does not match any
+error: failed to push some refs to 'https://github.com/joerV2/project.git'
+PS D:\GitHub\project> git push -u origin feature
+error: src refspec feature does not match any
+error: failed to push some refs to 'https://github.com/joerV2/project.git'
+PS D:\GitHub\project>
+PS D:\GitHub\project>
+PS D:\GitHub\project> git push -u origin main
+branch 'main' set up to track 'origin/main'.
+Everything up-to-date
+PS D:\GitHub\project> git add docs/ src/ tests/
+fatal: pathspec 'docs/' did not match any files
+PS D:\GitHub\project> git switch feature/readme
+Switched to branch 'feature/readme'
+PS D:\GitHub\project> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\GitHub\project> git merge feature/readme
+Updating d7c3a9f..07f1dec
+Fast-forward
+ ...321\217 \320\277\321\200\320\276\320\265\320\272\321\202\320\260.txt" | 1 +
+ ...21\207\320\265\320\272 \320\262 CSV, JSON, Anki \320\270 Quizlet.txt" | 1 +
+ ...01\320\277\320\265\320\272\321\202\320\276\320\262 MD, DOCX, TXT.txt" | 1 +
+ ...\320\270\320\273\320\276\320\266\320\265\320\275\320\270\321\217.txt" | 1 +
+ ...320\270 \320\276\321\202\320\262\320\265\321\202\320\276\320\262.txt" | 1 +
+ ...\320\270\320\273\320\276\320\266\320\265\320\275\320\270\321\217.txt" | 1 +
+ 6 files changed, 6 insertions(+)
+ create mode 100644 "docs/\320\224\320\276\320\272\321\203\320\274\320\265\320\275\321\202\320\260\321\206\320\270\321\217 \320\277\321\200\320\276\320\265\320\272\321\202\320\260.txt"
+ create mode 100644 "src/exporters/\320\255\320\272\321\201\320\277\320\276\321\200\321\202 \320\272\320\260\321\200\321\202\320\276\321\207\320\265\320\272 \320\262 CSV, JSON, Anki \320\270 Quizlet.txt"
+ create mode 100644 "src/importers/\320\230\320\274\320\277\320\276\321\200\321\202 \320\272\320\276\320\275\321\201\320\277\320\265\320\272\321\202\320\276\320\262 MD, DOCX, TXT.txt"
+ create mode 100644 "src/interface/\320\237\320\276\320\273\321\214\320\267\320\276\320\262\320\260\321\202\320\265\320\273\321\214\321\201\320\272\320\270\320\271 \320\270\320\275\321\202\320\265\321\200\321\204\320\265\320\271\321\201 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\321\217.txt"
+ create mode 100644 "src/parser/\320\240\320\260\320\267\320\261\320\276\321\200 \320\272\320\276\320\275\321\201\320\277\320\265\320\272\321\202\320\276\320\262 \320\270 \320\262\321\213\320\264\320\265\320\273\320\265\320\275\320\270\320\265 \320\262\320\276\320\277\321\200\320\276\321\201\320\276\320\262 \320\270 \320\276\321\202\320\262\320\265\321\202\320\276\320\262.txt"
+ create mode 100644 "tests/\320\242\320\265\321\201\321\202\320\270\321\200\320\276\320\262\320\260\320\275\320\270\320\265 \320\274\320\276\320\264\321\203\320\273\320\265\320\271 \320\277\321\200\320\270\320\273\320\276\320\266\320\265\320\275\320\270\321\217.txt"
+PS D:\GitHub\project> git push origin main
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (25/25), 2.39 KiB | 489.00 KiB/s, done.
+Total 25 (delta 4), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/joerV2/project.git
+   d7c3a9f..07f1dec  main -> main
+PS D:\GitHub\project> git switch -c feature/nav
+Switched to a new branch 'feature/nav'
+PS D:\GitHub\project> git add README.md
+PS D:\GitHub\project> git commit -m "Изменить навигацию по документации проекта"
+[feature/nav e419b2a] Изменить навигацию по документации проекта
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+PS D:\GitHub\project> git push -u origin feature/nav
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 456 bytes | 456.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'feature/nav' on GitHub by visiting:
+remote:      https://github.com/joerV2/project/pull/new/feature/nav
+remote:
+To https://github.com/joerV2/project.git
+ * [new branch]      feature/nav -> feature/nav
+branch 'feature/nav' set up to track 'origin/feature/nav'.
+PS D:\GitHub\project> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\GitHub\project> git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 973 bytes | 44.00 KiB/s, done.
+From https://github.com/joerV2/project
+   07f1dec..10340d0  main       -> origin/main
+Updating 07f1dec..10340d0
+Fast-forward
+ README.md | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+PS D:\GitHub\project> git switch -c feature/conflict
+Switched to a new branch 'feature/conflict'
+PS D:\GitHub\project> git add README.md
+PS D:\GitHub\project> git commit -m "Изменить заголовок README в feature-ветке"
+[feature/conflict fc77a6f] Изменить заголовок README в feature-ветке
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS D:\GitHub\project> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS D:\GitHub\project> git pull origin main
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 967 bytes | 18.00 KiB/s, done.
+From https://github.com/joerV2/project
+ * branch            main       -> FETCH_HEAD
+   10340d0..973ec4b  main       -> origin/main
+Updating 10340d0..973ec4b
+Fast-forward
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS D:\GitHub\project> git merge feature/conflict
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+PS D:\GitHub\project> git add README.md
+PS D:\GitHub\project> git commit -m "Разрешить конфликт README"
+[main 9dfd1d4] Разрешить конфликт README
+PS D:\GitHub\project> git push origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 595 bytes | 595.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/joerV2/project.git
+   973ec4b..9dfd1d4  main -> main
+PS D:\GitHub\project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS D:\GitHub\project> git branch
+  feature/conflict
+  feature/nav
+  feature/readme
+* main
+PS D:\GitHub\project> git tag
+PS D:\GitHub\project> git log --oneline --graph --all
+*   9dfd1d4 (HEAD -> main, origin/main, origin/HEAD) Разрешить конфликт README
+|\
+| * fc77a6f (feature/conflict) Изменить заголовок README в feature-ветке
+* | 973ec4b Update README.md
+|/
+*   10340d0 Merge pull request #1 from joerV2/feature/nav
+|\
+| * e419b2a (origin/feature/nav, feature/nav) Изменить навигацию по документации проекта
+|/
+* 07f1dec (feature/readme) Добавить структуру проекта: docs, src, tests
+* cf0d9a6 Добавить структуру проекта: docs, src, tests
+* d7c3a9f Revert "Добавить структуру проекта: docs, src, tests"
+* e0da942 Добавить структуру проекта: docs, src, tests
+* 7ecca20 Add comprehensive .gitignore file for Python projects
+* dd870c8 Create LICENSE
+* f6f2281 Update README.md
+* 3b3db90 Update README.md
+* d9e5404 Update README.md
+* 397e495 Update README.md
+* 0261bbb Initial commit
