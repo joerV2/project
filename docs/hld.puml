@@ -1,0 +1,52 @@
+
+@startuml
+left to right direction
+skinparam componentStyle rectangle
+
+actor "Пользователь" as User
+actor "Администратор сервиса\n(будущий тариф)" as Admin
+
+rectangle "Приложение «Конспект → Карточки»" {
+    component "Десктопный интерфейс" as UI
+
+    component "Модуль импорта\nMD / DOCX / TXT" as Importer
+    component "Парсер Q&A" as Parser
+    component "Менеджер карточек\nпросмотр / редактирование" as Cards
+    component "Модуль экспорта\nCSV / JSON / Anki" as Exporter
+
+    component "OCR-модуль" as OCR
+    component "Адаптер LLM" as LLM
+    component "Настройки и выбор\nпровайдера" as Settings
+
+    database "Локальная файловая\nсистема" as FS
+}
+
+component "OCR Engine\nTesseract / EasyOCR" as OCRengine
+cloud "Внешние LLM API\nOpenAI / Gemini / GigaChat" as ExternalLLM
+node "Локальная LLM\nOllama / LM Studio" as LocalLLM
+cloud "Сервис подписки\n(будущий релиз)" as Subscription
+
+User --> UI
+
+UI --> Importer
+Importer --> FS : чтение файлов
+Importer --> Parser
+Parser --> Cards
+
+UI --> Cards
+Cards --> Exporter
+Exporter --> FS : сохранение результата
+
+UI --> OCR : изображение
+OCR --> OCRengine : распознавание
+OCR --> LLM : распознанный текст
+
+UI --> LLM : неструктурированный текст
+LLM --> Settings : параметры провайдера
+LLM --> ExternalLLM : HTTPS API
+LLM --> LocalLLM : локальный API
+
+Admin --> Subscription : управление тарифом
+LLM ..> Subscription : интеграция в будущем
+
+@enduml
