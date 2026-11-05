@@ -6,10 +6,10 @@
 
 Вся проектная документация находится в [Wiki](https://github.com/joerV2/project/wiki):
 
-- [Ideas](https://github.com/joerV2/project/wiki/Ideas) — три идеи проекта
-- [Evaluation](https://github.com/joerV2/project/wiki/Evaluation) — оценка идей экспертами
-- [Concept](https://github.com/joerV2/project/wiki/Concept) — концепция, экономика и устав
-- [Stakeholders](https://github.com/joerV2/project/wiki/Stakeholders) — заинтересованные стороны
+- [Идеи проекта](https://github.com/joerV2/project/wiki/Ideas)
+- [Концепция проекта](https://github.com/joerV2/project/wiki/Concept)
+- [Заинтересованные стороны](https://github.com/joerV2/project/wiki/Stakeholders)
+- [Оценка идей](https://github.com/joerV2/project/wiki/Evaluation)
 
 ## 👥 Эксперты
 
